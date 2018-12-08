@@ -1,0 +1,286 @@
+/* OVERALL CSS */
+html, body {
+    overflow-x: hidden;
+}
+
+section {
+    height: 100vh;
+    border-bottom: 10px solid rgba(29, 39, 49, 0.8);
+}
+
+img {
+    max-width: 100%;
+}
+
+/* CUSTOM CLASSES */
+
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pblue-bg {
+    background-color: rgb(11, 60, 93);
+}
+
+.gleaf-bg {
+    background-color: #d9b310;
+    color: white;
+}
+
+.sblue-bg {
+    background-color: #328cc1;
+}
+
+/* LOGO */
+
+#logo {
+    position: fixed;
+    width: 8vw;
+    min-width: 80px;
+    max-width: 120px;
+    top: 0;
+    left: 0;
+    background-color: rgba(29, 39, 49, 0.8);
+    z-index: 9999;
+}
+
+#logo:after {
+    content: '';
+    display: block;
+    padding-bottom: 100%;
+}
+
+#logo > div {
+    color: white;
+    padding: 20px;
+}
+
+#logo span {
+    transition: all 0.2s ease;
+}
+
+
+#logo span:hover {
+    font-weight: bold !important;
+    opacity: 1 !important;
+    cursor: pointer;
+}
+
+/* MENU */
+
+#menu {
+    text-align: center;
+    background-color:rgba(11, 60, 93, 0.8);
+    padding: 20px;
+}
+
+#menu ul {
+    margin: 0;
+    padding: 0;
+}
+
+#menu ul li {
+    list-style-type: none;
+    display: inline;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+#menu li:not(:first-child):before {
+    content: " | ";
+    color: white;
+}
+
+#menu li:hover {
+    text-decoration: underline;
+}
+
+/* MAIN AREA */
+
+#main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#main-banner {
+    background-color: rgba(256,256,256,0.8);
+    padding: 20px 0;
+}
+
+#main img {
+    width: 50vw;
+}
+
+/* ABOUT ME */
+
+#info-id button {
+    background-color: white;
+    color: #1d2731;
+    padding: 10px;
+    border-radius: 5px;
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+    border: 2px solid transparent;
+    animation: blink 0.5s infinite ease-in-out alternate;
+}
+
+#info-id button:hover {
+    border-color: #1d2731;
+}
+
+#info-id button:focus {
+    background-color: #1d2731;
+    color: white;
+    border-color: white;
+}
+
+#info-id > div {
+    opacity: 0;
+    display: none;
+}
+
+#likes h2 {
+    color: white;
+    position: relative;
+    left: -150%;
+    opacity: 0;
+}
+
+#likes p {
+    opacity: 0;
+    position: relative;
+    left: 150%;
+}
+
+/* PORTFOLIO */
+
+#portfolio-id hr, #info-id hr, #contact-id hr {
+    border-top: 4px solid #d9b310;
+}
+
+.portfolio-item {
+    height: 100%;
+    width: 100%;
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  margin: 0;
+}
+
+.portfolio-item > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #1d2731;
+    color: white;
+    opacity: 0;
+    transition: all 0.2s ease;
+}
+
+.portfolio-item > div:hover {
+    opacity: 0.8;
+}
+
+.portfolio-item img {
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-height: 100%;
+    min-width: 100%;
+    transform: translate(-50%, -50%);
+    -webkit-filter: grayscale(90%);
+    filter: grayscale(90%);
+}
+
+.portfolio-item a {
+    height: 100%;
+    width: 100%;
+    color: white;
+}
+
+
+/* CONTACT */
+
+#cont h1 {
+    color: white;
+}
+form input:not([type=submit]), form textarea {
+    width: 100%;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    margin-bottom: 10px;
+    text-indent: 5px;
+}
+
+#message {
+    height: 150px;
+}
+
+input[type=submit] {
+    background-color:#d9b310;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: auto;
+    padding: 0 25px;
+    transition: all 0.2s ease;
+    border-radius: 5px;
+    height: 40px;
+}
+
+input[type=submit]:hover {
+    background-color: white;
+    color: #1d2731;
+}
+
+/* KEYFRAMES */
+
+@keyframes blink {
+    from {
+        border-color: transparent;
+    }
+    to {
+        border-color: #1d2731;
+    }
+}
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 768px) {
+    #main img {
+        width: 90vw;
+    }
+
+    #about-me p {
+        font-size: 0.8rem;
+    }
+
+    #info-id {
+        padding: 10px !important;
+    }
+
+    #likes > div {
+        justify-content: center !important;
+    }
+
+    #portfolio-id > div:first-child {
+        height: 25%;
+    }
+
+    #portfolio-id > div:last-child {
+        height: 75%;
+    }
+
+    #info-id button {
+        width: 80%;
+    }
+}
