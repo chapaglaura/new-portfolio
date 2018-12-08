@@ -1,5 +1,9 @@
 $(document).ready(function () {
-    
+
+    $(function () {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
     checkMenuScroll();
 
     $('section.parallax').parallax({

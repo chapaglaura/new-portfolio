@@ -68,6 +68,25 @@ img {
     cursor: pointer;
 }
 
+/* MY CONTACT */
+
+#my-contact {
+    position: fixed;
+    right: 0;
+    top: 0;
+    background-color: rgba(29, 39, 49, 0.8);
+    z-index: 9999;
+}
+
+#my-contact i {
+    color: white;
+    padding: 10px;
+}
+
+#my-contact i:hover {
+    color: #d9b310;
+}
+
 /* MENU */
 
 #menu {
