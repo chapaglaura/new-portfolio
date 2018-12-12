@@ -89,7 +89,7 @@ function checkMenuScroll() {
 
         $('#logo').html(div);
 
-        $('#logo').css('width', 'auto');
+        $('#logo').addClass('auto-width');
 
         $('#logo span').css({
             'font-weight': 'normal',
@@ -118,5 +118,6 @@ function checkMenuScroll() {
     }
     else {
         $('#logo').empty();
+        $('#logo').removeClass('auto-width');
     }
 }

@@ -44,6 +44,7 @@ img {
     left: 0;
     background-color: rgba(29, 39, 49, 0.8);
     z-index: 9999;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
 }
 
 #logo:after {
@@ -66,6 +67,10 @@ img {
     font-weight: bold !important;
     opacity: 1 !important;
     cursor: pointer;
+}
+
+.auto-width {
+    width: 15vw !important;
 }
 
 /* MY CONTACT */
