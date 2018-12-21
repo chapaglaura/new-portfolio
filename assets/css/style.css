@@ -1,6 +1,9 @@
 /* OVERALL CSS */
 html, body {
     overflow-x: hidden;
+    font-family: 'Roboto';
+    letter-spacing: 0.5px;
+    cursor: default;
 }
 
 section {
@@ -10,6 +13,10 @@ section {
 
 img {
     max-width: 100%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display';
 }
 
 /* CUSTOM CLASSES */
@@ -33,54 +40,49 @@ img {
     background-color: #328cc1;
 }
 
-/* LOGO */
+.showing {
+    right: 0px !important;
+}
 
-#logo {
+/* TOP MENU */
+
+#top-menu {
     position: fixed;
-    width: 8vw;
-    min-width: 80px;
-    max-width: 120px;
-    top: 0;
-    left: 0;
+    top: -100%;
     background-color: rgba(29, 39, 49, 0.8);
     z-index: 9999;
-    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.8s cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: 40px;
+    opacity: 0.4;
 }
 
-#logo:after {
-    content: '';
-    display: block;
-    padding-bottom: 100%;
+#top-menu:hover {
+    opacity: 1;
 }
 
-#logo > div {
-    color: white;
-    padding: 20px;
-}
-
-#logo span {
+#top-menu span {
     transition: all 0.2s ease;
+    color: white;
+    padding: 0 10px;
 }
 
 
-#logo span:hover {
+#top-menu span:hover {
     font-weight: bold !important;
     opacity: 1 !important;
     cursor: pointer;
-}
-
-.auto-width {
-    width: 15vw !important;
 }
 
 /* MY CONTACT */
 
 #my-contact {
     position: fixed;
-    right: 0;
-    top: 0;
+    right: -50px;
+    top: 40px;
     background-color: rgba(29, 39, 49, 0.8);
     z-index: 9999;
+    width: 40px;
+    transition: all 0.4s ease;
 }
 
 #my-contact i {
@@ -92,12 +94,31 @@ img {
     color: #d9b310;
 }
 
+#social {
+    position: fixed;
+    right: 0;
+    background-color: rgba(29, 39, 49, 0.8);
+    z-index: 9999;
+    width: 40px;
+    height: 40px;
+}
+
+#social i {
+    padding: 10px;
+    color: white;
+    transition: all 0.4s ease;
+    cursor: pointer
+}
+
 /* MENU */
 
 #menu {
     text-align: center;
     background-color:rgba(11, 60, 93, 0.8);
     padding: 20px;
+    position: relative;
+    left: 100%;
+    transition: all 0.8s cubic-bezier(.25,.75,.5,1.25);
 }
 
 #menu ul {
@@ -111,6 +132,7 @@ img {
     color: white;
     cursor: pointer;
     font-weight: bold;
+    letter-spacing: 2px;
 }
 
 #menu li:not(:first-child):before {
@@ -133,39 +155,30 @@ img {
 #main-banner {
     background-color: rgba(256,256,256,0.8);
     padding: 20px 0;
+    position: relative;
+    right: 100%;
+    transition: all 1s cubic-bezier(.25,.75,.5,1.25);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    width: 90%;
+    margin: 0 auto;
 }
 
-#main img {
-    width: 50vw;
+#main-banner h1 {
+    font-family: 'Dancing Script';
+    font-size: 5em;
+}
+
+#main-banner h5 {
+    background-color: rgba(29, 39, 49, 0.9);
+    color: white;
+    padding: 10px;
+}
+
+#main-banner h5:hover {
+    background-color: rgba(29, 39, 49, 1);
 }
 
 /* ABOUT ME */
-
-#info-id button {
-    background-color: white;
-    color: #1d2731;
-    padding: 10px;
-    border-radius: 5px;
-    transition: all 0.2s ease-in-out;
-    cursor: pointer;
-    border: 2px solid transparent;
-    animation: blink 0.5s infinite ease-in-out alternate;
-}
-
-#info-id button:hover {
-    border-color: #1d2731;
-}
-
-#info-id button:focus {
-    background-color: #1d2731;
-    color: white;
-    border-color: white;
-}
-
-#info-id > div {
-    opacity: 0;
-    display: none;
-}
 
 #likes h2 {
     color: white;
@@ -179,6 +192,73 @@ img {
     position: relative;
     left: 150%;
 }
+
+/* SLIDESHOW */
+
+.slides {
+    display: none;
+}
+
+.current-slide {
+    display: block !important;
+}
+
+#info-arrows {
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.arrows {
+    color: rgba(29, 39, 49, 1);
+    cursor: pointer;
+}
+
+.arrows:active {
+    color: rgba(29, 39, 49, 0.5);
+}
+
+#info-dots {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.dots {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dots:hover {
+    background-color: #717171;
+}
+
+.fading {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+    animation-iteration-count: 1;
+  }
+  
+  @-webkit-keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
+  
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
 
 /* PORTFOLIO */
 

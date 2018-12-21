@@ -1,32 +1,41 @@
 $(document).ready(function () {
 
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-    })
-
     checkMenuScroll();
 
     $('section.parallax').parallax({
-        imageSrc: '../images/eiffel-tower.jpg'
+        imageSrc: '../images/eiffel-tower.jpg',
+        speed: 0.6
     });
 
-    $('#want-to-know').click(function () {
-
-        $(this).animate({
-            opacity: '0'
-        })
-
-        setTimeout(() => {
-            $(this).hide();
-            $('#info-id > div').show();
-            $('#info-id > div, #likes p, #likes h2').animate({
-                opacity: '1',
-                right: 0,
-                left: 0
-            });
-        }, 300);
-
+    $('#social i, #my-contact').hover(function () {
+        $('#my-contact').addClass('showing');
+        $('#social i').css('transform', 'rotate(-180deg)');
+    }, function () {
+        $('#my-contact').removeClass('showing');
+        $('#social i').css('transform', 'rotate(0deg)');
     });
+
+    setTimeout(function () {
+        $('#main-banner').css('right', '0');
+    }, 400);
+
+    setTimeout(function () {
+        $('#menu').css('left', '0');
+    }, 600);
+
+    $('#top-menu').width($(window).width() - $('#social').width());
+
+    $('#top-menu span').click(function () {
+        $('#top-menu span').css({
+            'font-weight': 'normal',
+            opacity: 0.5
+        });
+        
+        $(this).css({
+            opacity: 1,
+            'font-weight': 'bold'
+        });
+    })
 
     $('body').on('click', '.about', function () {
         var offset = $('#about-me').offset().top;
@@ -52,9 +61,15 @@ $(document).ready(function () {
         }, 800);
     });
 
+    $('.arrows').hover(function () {
+        $(this).addClass('fas').removeClass('far');
+    }, function () {
+        $(this).addClass('far').removeClass('fas');
+    });
+
     $(window).scroll(function () {
         checkMenuScroll();
-    })
+    });
 
 });
 
@@ -70,28 +85,10 @@ function checkMenuScroll() {
 
     if (scrollBottom >= (windowh * 1.5)) {
 
-        var span1 = $('<span class="about">');
-        var span2 = $('<span class="portfolio">');
-        var span3 = $('<span class="contact">');
-        var div = $('<div>');
 
-        span1.text('ABOUT ME');
+        $('#top-menu').css('top', '0');
 
-        $(div).append(span1, '<br>');
-
-        span2.text('PORTFOLIO');
-
-        $(div).append(span2, '<br>');
-
-        span3.text('CONTACT');
-
-        $(div).append(span3);
-
-        $('#logo').html(div);
-
-        $('#logo').addClass('auto-width');
-
-        $('#logo span').css({
+        $('#top-menu span').css({
             'font-weight': 'normal',
             opacity: 0.5
         });
@@ -100,7 +97,14 @@ function checkMenuScroll() {
             $('.about').css({
                 opacity: 1,
                 'font-weight': 'bold'
-            })
+            });
+            setTimeout(() => {
+                $('#likes p, #likes h2').animate({
+                    opacity: '1',
+                    right: 0,
+                    left: 0
+                });
+            }, 300);
         }
         else if (scrollBottom > (p + breakpoint) && scrollBottom < (c + breakpoint)) {
             $('.portfolio').css({
@@ -117,7 +121,32 @@ function checkMenuScroll() {
 
     }
     else {
-        $('#logo').empty();
-        $('#logo').removeClass('auto-width');
+        $('#top-menu').css('top', '-100%');
     }
+}
+
+function changeSlide(n) {
+    var oldSlide = $('.current-slide').attr('data-slide');
+    var newSlide = parseInt(oldSlide) + n;
+    var slides = $('.slides').length;
+    $('.current-slide').removeClass('current-slide');
+    $('.active').removeClass('active');
+
+    if (newSlide > slides) {
+        setSlide(1);
+    }
+    else if (newSlide < 1) {
+        setSlide(slides);
+    }
+    else {
+        setSlide(newSlide);
+    }
+}
+
+function setSlide(s) {
+    var slideIndex = s - 1;
+    setTimeout(function () {
+        $('.slides')[slideIndex].classList.add('current-slide');
+        $('.dots')[slideIndex].classList.add('active');
+    }, 100);
 }

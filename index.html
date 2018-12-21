@@ -13,14 +13,22 @@
         crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU"
         crossorigin="anonymous">
-
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700|Roboto:400,700|Dancing+Script:700" rel="stylesheet">
 
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
 
 <body>
-    <div id="logo" class="flex-center">
-        <img src="./assets/images/llama-3.jpg" />
+    <div id="top-menu" class="flex-center">
+        <div>
+            <span class="about">ABOUT ME </span>
+            <span class="portfolio">PORTFOLIO </span>
+            <span class="contact">CONTACT</span>
+        </div>
+    </div>
+
+    <div id="social" class="flex-center">
+        <i class="fas fa-caret-left"></i>
     </div>
 
     <div id="my-contact" class="flex-center flex-column">
@@ -38,8 +46,9 @@
 
     <section class="parallax" data-parallax="scroll" data-image-src="./assets/images/eiffel-tower.jpg">
         <div id="main" class="container-fluid h-100 p-0">
-            <div id="main-banner" class="flex-center">
-                <img src="assets/images/logo-blue.png" />
+            <div id="main-banner" class="flex-center flex-column">
+                <h1>Laura Chapa</h1>
+                <h5>My Website Portfolio</h5>
             </div>
             <div id="menu">
                 <ul>
@@ -54,51 +63,98 @@
 
     <section>
         <div id="about-me" class="container-fluid h-100">
-            <div class="row h-75">
-                <div id="info-id" class="col-md-12 flex-center text-center p-5">
-                    <button id="want-to-know">
-                        <h3 class="m-0">DO YOU REALLY WANT TO KNOW STUFF ABOUT ME?</h3>
-                    </button>
-                    <div>
+            <div class="row h-75 position-relative">
+                <div id="info-id" class="col-md-12 text-center p-5 slideshow-container">
+                    <div class="slides current-slide fading" data-slide="1">
                         <div class="d-inline-block">
                             <h1>ABOUT ME</h1>
                             <hr>
                         </div>
-                        <p>
-                            My full name is <strong>Laura Chapa González</strong>.
-                            <br>
-                            I am <strong>24 years old</strong>,
-                            but when
-                            people ask me about my age I tell them I am much, much younger (just kidding!).
-                            <br>
-                            I have had a certain inclination for biology and math since I can remember. I used to dig
-                            for bugs and play with them, not cockroaches, though, those scare the bejesus out of me; I
-                            also liked to watch surgery videos and liked to know how the human body
-                            works.
-                            <br>
-                            Due to all these likings, I decided to major at Biomedical Engineering, as it had
-                            everything I expected concerning the anatomical and physiological part of the human being
-                            and engineering subjects like math, science, chemistry, physics, etc.
-                            <br>
-                            I like a lot watching football, but mostly when the Mexican National Football team is
+                        <p> My full name is <strong>Laura Chapa González</strong>. <br> I am 24 years old, but when
+                            people ask me about my
+                            age I tell them I am much, much younger (just kidding!). <br> I have had a certain
+                            inclination for biology and
+                            math since I can remember. I used to dig for bugs and play with them, not cockroaches,
+                            though, those scare the
+                            bejesus out of me; I also liked to watch surgery videos and liked to know how the human
+                            body works. <br> Due to
+                            all these likings, I decided to major at Biomedical Engineering, as it had everything I
+                            expected concerning the
+                            anatomical and physiological part of the human being and engineering subjects like math,
+                            science, chemistry,
+                            physics, etc. <br> I like a lot watching football, but mostly when the Mexican National
+                            Football team is
                             playing. I used to play this sport and some others like basketball and volleyball. I
-                            completely <strong>ADORE</strong> dancing as I used to dance jazz, hip hop and ballet.
-                            There was a time where I had to juggle between basketball, jazz and ballet all in the same
-                            day, so you can pretty much say, back in the day, I was quite an active girl.
-                        </p>
+                            completely adore dancing
+                            as I used to dance jazz, hip hop and ballet. There was a time where I had to juggle between
+                            basketball, jazz
+                            and ballet all in the same day, so you can pretty much say, back in the day, I was quite an
+                            active girl. </p>
                     </div>
+
+                    <div class="slides fading" data-slide="2">
+                        <div class="d-inline-block">
+                            <h1>EXPERIENCE</h1>
+                            <hr>
+                        </div>
+                        <p>Vestibulum consectetur ligula turpis, sit amet aliquam elit finibus sed. Vestibulum non
+                            arcu eget nisi
+                            consectetur ultricies eu ut arcu. Donec efficitur efficitur magna, eu bibendum nisl
+                            vehicula vel. Quisque
+                            ornare quis ante eget commodo. Phasellus accumsan ullamcorper metus nec porttitor. Donec ac
+                            orci risus. Quisque
+                            dapibus, ipsum nec viverra rhoncus, nisi nisl placerat est, sit amet commodo est justo id
+                            eros. Vivamus
+                            volutpat at elit eget interdum. Donec imperdiet porttitor ullamcorper.</p>
+                    </div>
+
+                    <div class="slides fading" data-slide="3">
+                        <div class="d-inline-block">
+                            <h1>SKILLS</h1>
+                            <hr>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque eget odio ut turpis
+                            euismod posuere.
+                            Aliquam tempor quam vitae purus convallis, vel consectetur metus semper. Suspendisse non
+                            congue quam, faucibus
+                            auctor lectus. Phasellus tempor leo velit, eget efficitur est suscipit quis. Maecenas
+                            dictum laoreet ante, nec
+                            cursus eros mattis ut. Quisque luctus urna vitae placerat rhoncus. Duis consectetur eu quam
+                            eu vehicula.
+
+                            Curabitur id magna finibus, egestas massa id, finibus nibh. Nulla aliquam tellus a ex
+                            consequat, quis facilisis
+                            risus fermentum. Proin id quam massa. Suspendisse accumsan pulvinar neque, vitae
+                            pellentesque tellus porta ac.
+                            Mauris dapibus risus ex, et tristique purus placerat sed. Sed semper dictum libero eget
+                            cursus. Morbi in nibh
+                            vel nunc pharetra pellentesque.</p>
+                    </div>
+
+                </div>
+                <div id="info-arrows" class="p-2">
+                    <i class="far fa-arrow-alt-circle-left arrows prev-arrow" onclick="changeSlide(-1)"></i>
+                    <i class="far fa-arrow-alt-circle-right arrows next-arrow" onclick="changeSlide(1)"></i>
+                </div>
+                <br>
+                <div id="info-dots" class="text-center">
+                    <span class="dots active" onclick="setSlide(1)"></span>
+                    <span class="dots" onclick="setSlide(2)"></span>
+                    <span class="dots" onclick="setSlide(3)"></span>
                 </div>
             </div>
             <div id="likes" class="row h-25">
                 <div class="col-md-4 flex-center pblue-bg justify-content-end">
-                    <h2 class="m-0">LIKES:</h2>
+                    <h2 class="m-0">FUN FACTS:</h2>
                 </div>
                 <div class="col-md-8 flex-center gleaf-bg">
                     <p class="m-0">
-                        French language and most of the things that have to do with France •
-                        Videogames! (mostly, one in particular: The Legend of Zelda) •
-                        Llamas and alpacas (they are oh so cuuuute!) •
-                        Pizza, pasta and most Italian food</p>
+                        I love the French language and most of the things that have to do with France •
+                        Videogames are my thing! (one franchise in particular: The Legend of Zelda series) •
+                        Llamas and alpacas (they are oh so cuuuute!) are my spirit animals/totem •
+                        Pizza, pasta and most Italian food: yumssss! •
+                        I have watched all 10 seasons of Friends like a gazillion times (who hasn't, tho?)
+                    </p>
                 </div>
             </div>
         </div>
@@ -106,7 +162,7 @@
     <section>
         <div id="port" class="container-fluid h-100">
             <div id="portfolio-id" class="row h-100">
-                <div class="col-md-4 flex-center text-center p-4 align-items-end justify-content-end">
+                <div class="col-md-4 d-flex text-center p-4 align-items-end justify-content-end">
                     <div>
                         <h1>PORTFOLIO</h1>
                         <hr>
